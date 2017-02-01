@@ -33,6 +33,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -41,5 +42,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string></string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>

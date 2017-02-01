@@ -1,0 +1,43 @@
+
+kernel vec4 selective_color(__sample img, float selected_hue, float hue_range) {
+    
+    float min_value = 0.0f;
+    float max_value = 0.0f;
+    float h = 0.0f;
+    float s = 0.0f;
+    float l = 0.0f;
+    float delta = 0.0f;
+    
+    min_value = min(min(img.r, img.g), img.b);
+    max_value = max(max(img.r, img.g), img.b);
+    delta = max_value - min_value;
+
+    l = (min_value + max_value) / 2.0f;
+
+    if (delta == 0.0f) {
+        h = 0.0f;
+        s = 0.0f;
+    }
+    else {
+        s = (l > 0.5f) ? delta / (2.0f - delta) : delta / (max_value + min_value);
+        
+        if (img.r > img.g && img.r > img.b) {
+            h = (img.g- img.b) / delta + (img.g < img.b ? 6.0f : 0.0f);
+        }
+        else if (img.g > img.b) {
+            h = (img.b - img.r) / delta + 2.0f;
+        }
+        else {
+            h = (img.r - img.g) / delta + 4.0f;
+        }
+        
+        h /= 6.0f;
+    }
+
+    if (h >= selected_hue - hue_range && h <= selected_hue + hue_range) {
+        return vec4(img.r, img.g, img.b, img.a);
+    }
+    else {
+        return vec4(l, l, l, img.a);
+    }
+}

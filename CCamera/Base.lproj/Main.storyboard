@@ -1,26 +1,128 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6a3-sQ-3Oj">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6r-wi-YGh">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-MM-e9Y" userLabel="ShutterButton">
+                                <rect key="frame" x="678" y="477" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="mKm-jn-54o"/>
+                                    <constraint firstAttribute="height" constant="70" id="sOZ-z8-rdJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ShutterButton"/>
+                                <connections>
+                                    <action selector="didTouchShutterButton:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0N-Eg-hKN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzE-fT-0Qy">
+                                <rect key="frame" x="689" y="951" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="E2H-tt-uxV"/>
+                                    <constraint firstAttribute="width" constant="48" id="JzJ-5f-ARu"/>
+                                </constraints>
+                                <state key="normal" title="Gallery"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8K-cz-SpQ">
+                                <rect key="frame" x="88" y="80" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Timer"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1k1-qP-9TO">
+                                <rect key="frame" x="20" y="467" width="354" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpH-lN-my5">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="J4X-ie-4Ic"/>
+                                            <constraint firstAttribute="height" constant="50" id="aaF-rr-EJn"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                                        <state key="normal" image="Dropper"/>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dAK-8N-7Lz">
+                                        <rect key="frame" x="-2" y="60" width="358" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="354" id="ymu-2Y-29x"/>
+                                        </constraints>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dAK-8N-7Lz" firstAttribute="leading" secondItem="1k1-qP-9TO" secondAttribute="leading" id="1hL-t3-11U"/>
+                                    <constraint firstItem="dAK-8N-7Lz" firstAttribute="top" secondItem="1k1-qP-9TO" secondAttribute="top" constant="60" id="QIy-aK-Y7e"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sp-pI-wGb">
+                                <rect key="frame" x="688" y="572" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1ki-9V-h5N"/>
+                                    <constraint firstAttribute="width" constant="50" id="Gvj-rr-gRc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="SwitchCamera"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6a3-sQ-3Oj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="749" id="1Lc-qq-ORM"/>
+                            <constraint firstItem="3Sp-pI-wGb" firstAttribute="top" secondItem="eoJ-MM-e9Y" secondAttribute="bottom" constant="25" id="6kt-Qs-XT7"/>
+                            <constraint firstItem="6a3-sQ-3Oj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C9Y-B0-JFd"/>
+                            <constraint firstItem="6a3-sQ-3Oj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FIR-TA-7rs"/>
+                            <constraint firstItem="U6r-wi-YGh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="HRU-e7-Nmw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eoJ-MM-e9Y" secondAttribute="trailing" id="LVE-0k-DnB"/>
+                            <constraint firstItem="6a3-sQ-3Oj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="750" id="M8P-xB-F87"/>
+                            <constraint firstItem="3Sp-pI-wGb" firstAttribute="centerX" secondItem="eoJ-MM-e9Y" secondAttribute="centerX" id="MSQ-q5-Ukw"/>
+                            <constraint firstItem="1k1-qP-9TO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MaD-ly-JMs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HzE-fT-0Qy" secondAttribute="bottom" constant="25" id="NaU-xV-Ug5"/>
+                            <constraint firstItem="HzE-fT-0Qy" firstAttribute="centerX" secondItem="eoJ-MM-e9Y" secondAttribute="centerX" id="WLz-Im-CLM"/>
+                            <constraint firstItem="U6r-wi-YGh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZeG-xK-6PM"/>
+                            <constraint firstItem="U6r-wi-YGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dNa-eZ-qgg"/>
+                            <constraint firstItem="U6r-wi-YGh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="efP-uS-ywb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1k1-qP-9TO" secondAttribute="leading" id="x4R-Xo-h5k"/>
+                            <constraint firstItem="eoJ-MM-e9Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xK1-35-gqb"/>
+                            <constraint firstItem="6a3-sQ-3Oj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="ygw-G8-Fp0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraViewfinderView" destination="6a3-sQ-3Oj" id="nPp-Kc-a0W"/>
+                        <outlet property="shutterButton" destination="eoJ-MM-e9Y" id="Gr5-55-Upb"/>
+                        <outlet property="temporaryCoverView" destination="U6r-wi-YGh" id="jcF-dB-2ak"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.21875" y="37.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dropper" width="47" height="47"/>
+        <image name="ShutterButton" width="54" height="54"/>
+        <image name="SwitchCamera" width="47" height="47"/>
+    </resources>
 </document>
